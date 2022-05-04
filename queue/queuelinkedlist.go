@@ -1,4 +1,4 @@
-package main
+package queue
 
 import "github.com/CarosDrean/custom-list/linkedlist"
 
@@ -11,12 +11,12 @@ func (q *QueueLinkedList) Enqueue(item interface{}) {
 }
 
 func (q *QueueLinkedList) Dequeue() (interface{}, bool) {
-	tail, ok := q.items.GetTail()
+	tail, ok := q.items.GetHead()
 	if !ok {
 		return nil, false
 	}
 
-	q.items.DeleteTail()
+	q.items.DeleteHead()
 
 	return tail.Data, true
 }

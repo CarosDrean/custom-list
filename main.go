@@ -6,6 +6,8 @@ import (
 	"os"
 
 	"github.com/CarosDrean/custom-list/linkedlist"
+    "github.com/CarosDrean/custom-list/queue"
+    "github.com/CarosDrean/custom-list/stack"
 )
 
 type IStack interface {
@@ -21,6 +23,11 @@ type IQueue interface {
 }
 
 func main() {
+    var queueSimple queue.Queue
+    var stackSimple stack.Stack
+    var queueLinkedList queue.QueueLinkedList
+    var stackLinkedList stack.StackLinkedList
+    
 	for {
 		fmt.Println("=============== MENU ===============\n" +
 			"1.- Ejecutar test de LinkedList personalizado\n" +
@@ -41,9 +48,9 @@ func main() {
 		case "1":
 			linkedlist.TestList()
 		case "2":
-			menuQueueStack(&Stack{}, &Queue{})
+			menuQueueStack(&stackSimple, &queueSimple)
 		case "3":
-			menuQueueStack(&StackLinkedList{}, &QueueLinkedList{})
+			menuQueueStack(&stackLinkedList, &queueLinkedList)
 		case "4":
 			os.Exit(0)
 		default:

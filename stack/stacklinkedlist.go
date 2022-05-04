@@ -1,4 +1,4 @@
-package main
+package stack
 
 import "github.com/CarosDrean/custom-list/linkedlist"
 
@@ -11,12 +11,12 @@ func (s *StackLinkedList) Push(item interface{}) {
 }
 
 func (s *StackLinkedList) Pop() (interface{}, bool) {
-	head, ok := s.items.GetHead()
+	head, ok := s.items.GetTail()
 	if !ok {
 		return nil, false
 	}
 
-	s.items.DeleteHead()
+	s.items.DeleteTail()
 
 	return head.Data, true
 }
