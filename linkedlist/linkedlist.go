@@ -14,16 +14,16 @@ type Node struct {
 type LinkedList struct {
 	head   *Node
 	tail   *Node
-	length int
+	size int
 }
 
 func (l LinkedList) ToString() string {
 	var result []string
 	node := l.head
-	for l.length != 0 {
+	for l.size != 0 {
 		result = append(result, fmt.Sprintf("%v", node.Data))
 		node = node.next
-		l.length--
+		l.size--
 	}
 
 	return strings.Join(result, " ")

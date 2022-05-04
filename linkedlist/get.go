@@ -16,7 +16,7 @@ func (l *LinkedList) SearchWithValue(value interface{}) (Node, bool) {
 }
 
 func (l *LinkedList) GetIndex(index int) (Node, error) {
-	if l.length <= index {
+	if l.size <= index {
 		return Node{}, fmt.Errorf("index is greater than length of list")
 	}
 
@@ -33,7 +33,7 @@ func (l *LinkedList) GetIndex(index int) (Node, error) {
 		return n, nil
 	}
 
-	if index == l.length-1 {
+	if index == l.size-1 {
 		n, ok := l.GetTail()
 		if !ok {
 			return Node{}, fmt.Errorf("index not found")

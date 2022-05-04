@@ -3,32 +3,32 @@ package linkedlist
 import "fmt"
 
 func (l *LinkedList) PutHead(n *Node) {
-	if l.length == 0 {
+	if l.size == 0 {
 		l.head = n
 		l.tail = n
-		l.length++
+		l.size++
 		return
 	}
 
 	second := l.head
 	l.head = n
 	l.head.next = second
-	l.length++
+	l.size++
 }
 
 func (l *LinkedList) PutTail(n *Node) {
-	if l.length == 0 {
+	if l.size == 0 {
 		l.PutHead(n)
 		return
 	}
 
 	l.tail.next = n
 	l.tail = n
-	l.length++
+	l.size++
 }
 
 func (l *LinkedList) PutIndex(index int, n *Node) error {
-	if l.length < index {
+	if l.size < index {
 		return fmt.Errorf("index is greater than length of list")
 	}
 
@@ -41,7 +41,7 @@ func (l *LinkedList) PutIndex(index int, n *Node) error {
 		return nil
 	}
 
-	if index == l.length {
+	if index == l.size {
 		l.PutTail(n)
 		return nil
 	}
@@ -53,7 +53,7 @@ func (l *LinkedList) PutIndex(index int, n *Node) error {
 
 	n.next = previous.next
 	previous.next = n
-	l.length++
+	l.size++
 
 	return nil
 }

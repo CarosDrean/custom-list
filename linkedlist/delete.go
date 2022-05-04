@@ -3,7 +3,7 @@ package linkedlist
 import "fmt"
 
 func (l *LinkedList) DeleteWithValue(value interface{}) {
-	if l.length == 0 {
+	if l.size == 0 {
 		return
 	}
 
@@ -25,34 +25,34 @@ func (l *LinkedList) DeleteWithValue(value interface{}) {
 		previousToDelete = previousToDelete.next
 	}
 	previousToDelete.next = previousToDelete.next.next
-	l.length--
+	l.size--
 }
 
 func (l *LinkedList) DeleteHead() {
-	if l.length == 0 {
+	if l.size == 0 {
 		return
 	}
 
-	if l.length == 1 {
+	if l.size == 1 {
 		l.head = nil
 		l.tail = nil
-		l.length--
+		l.size--
 		return
 	}
 
 	l.head = l.head.next
-	l.length--
+	l.size--
 }
 
 func (l *LinkedList) DeleteTail() {
-	if l.length == 0 {
+	if l.size == 0 {
 		return
 	}
 
-	if l.length == 1 {
+	if l.size == 1 {
 		l.head = nil
 		l.tail = nil
-		l.length--
+		l.size--
 		return
 	}
 
@@ -65,11 +65,11 @@ func (l *LinkedList) DeleteTail() {
 
 	tailForDelete = nil
 	l.tail = newTail
-	l.length--
+	l.size--
 }
 
 func (l *LinkedList) DeleteIndex(index int) error {
-	if l.length <= index {
+	if l.size <= index {
 		return fmt.Errorf("index is greater than length of list")
 	}
 
@@ -82,7 +82,7 @@ func (l *LinkedList) DeleteIndex(index int) error {
 		return nil
 	}
 
-	if index == l.length-1 {
+	if index == l.size-1 {
 		l.DeleteTail()
 		return nil
 	}
@@ -93,7 +93,7 @@ func (l *LinkedList) DeleteIndex(index int) error {
 	}
 
 	previous.next = previous.next.next
-	l.length--
+	l.size--
 
 	return nil
 }
