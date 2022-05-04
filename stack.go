@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Stack struct {
 	items []interface{}
 }
@@ -17,4 +19,8 @@ func (s *Stack) Pop() (interface{}, bool) {
 	s.items = s.items[:len(s.items)-1]
 
 	return item, true
+}
+
+func (s Stack) ToString() string {
+	return fmt.Sprintf("%v", s.items)
 }

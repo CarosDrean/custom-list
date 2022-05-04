@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Queue struct {
 	items []interface{}
 }
@@ -17,4 +19,8 @@ func (q *Queue) Dequeue() (interface{}, bool) {
 	q.items = q.items[1:]
 
 	return item, true
+}
+
+func (q Queue) ToString() string {
+	return fmt.Sprintf("%v", q.items)
 }

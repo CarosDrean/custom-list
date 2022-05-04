@@ -1,11 +1,13 @@
 package main
 
+import "StructureData/linkedlist"
+
 type QueueLinkedList struct {
-	items LinkedList
+	items linkedlist.LinkedList
 }
 
 func (q *QueueLinkedList) Enqueue(item interface{}) {
-	q.items.Postponed(&Node{data: item})
+	q.items.PutTail(&linkedlist.Node{Data: item})
 }
 
 func (q *QueueLinkedList) Dequeue() (interface{}, bool) {
@@ -16,5 +18,9 @@ func (q *QueueLinkedList) Dequeue() (interface{}, bool) {
 
 	q.items.DeleteTail()
 
-	return tail.data, true
+	return tail.Data, true
+}
+
+func (q QueueLinkedList) ToString() string {
+	return q.items.ToString()
 }
