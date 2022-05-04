@@ -1,6 +1,6 @@
 package main
 
-import "StructureData/linkedlist"
+import "github.com/CarosDrean/custom-list/linkedlist"
 
 type StackLinkedList struct {
 	items linkedlist.LinkedList

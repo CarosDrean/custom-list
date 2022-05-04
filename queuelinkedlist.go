@@ -1,6 +1,6 @@
 package main
 
-import "StructureData/linkedlist"
+import "github.com/CarosDrean/custom-list/linkedlist"
 
 type QueueLinkedList struct {
 	items linkedlist.LinkedList

@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"StructureData/linkedlist"
+	"github.com/CarosDrean/custom-list/linkedlist"
 )
 
 type IStack interface {
