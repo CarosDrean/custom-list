@@ -12,8 +12,8 @@ type Node struct {
 }
 
 type LinkedList struct {
-	head   *Node
-	tail   *Node
+	head *Node
+	tail *Node
 	size int
 }
 
@@ -41,26 +41,26 @@ func TestList() {
 	node6 := &Node{Data: 23}
 	node7 := &Node{Data: 33}
 
-	fmt.Println("Valor Inicial")
+	fmt.Println("Valor Inicial: 48")
 	myList.PutHead(node1)
 	fmt.Println(myList.ToString())
 
-	fmt.Println("Agregando datos al Inicio")
+	fmt.Println("Agregando datos al Inicio: 18 <- 16 <- 23")
 	myList.PutHead(node2)
 	myList.PutHead(node3)
 	myList.PutHead(node6)
 	fmt.Println(myList.ToString())
 
-	fmt.Println("Agregando datos al Final")
+	fmt.Println("Agregando datos al Final: 20 -> 22")
 	myList.PutTail(node4)
 	myList.PutTail(node5)
 	fmt.Println(myList.ToString())
 
-	fmt.Println("Eliminando Head")
+	fmt.Println("Eliminando Head: 23")
 	myList.DeleteHead()
 	fmt.Println(myList.ToString())
 
-	fmt.Println("Eliminando Tail")
+	fmt.Println("Eliminando Tail: 22")
 	myList.DeleteTail()
 	fmt.Println(myList.ToString())
 
@@ -68,13 +68,13 @@ func TestList() {
 	myList.DeleteWithValue(18)
 	fmt.Println(myList.ToString())
 
-	fmt.Println("Obteniendo Head")
+	fmt.Println("Obteniendo Head: 16")
 	head, ok := myList.GetHead()
 	if ok {
 		fmt.Println(head.Data)
 	}
 
-	fmt.Println("Obteniendo Tail")
+	fmt.Println("Obteniendo Tail: 20")
 	tail, ok := myList.GetTail()
 	if ok {
 		fmt.Println(tail.Data)
@@ -88,11 +88,11 @@ func TestList() {
 		fmt.Println(node.Data)
 	}
 
-	fmt.Println("Agregando Head")
+	fmt.Println("Agregando Head: 33")
 	myList.PutHead(node7)
 	fmt.Println(myList.ToString())
 
-	fmt.Println("Eliminando Indice 3")
+	fmt.Println("Eliminando Indice: 3")
 	if err := myList.DeleteIndex(3); err != nil {
 		log.Println(err)
 		return
